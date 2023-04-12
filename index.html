@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css" />
+    <script src="fontawesome-free-6.4.0-web/js/all.js"></script>
+    <script src="fontawesome-free-6.4.0-web/js/all.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="JS.js" /> -->
+  </head>
+
+  <body>
+    <div>
+      <video class="bg-video" autoplay loop muted plays-inline>
+        <source
+          src="pexels-tsun-5380054-3840x2160-30fps.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 m-auto" id="todocontainer">
+          <h4><u>MY TO DO</u></h4>
+
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="inputbox"
+              placeholder="Enter text here.."
+            />
+            <div class="add-button">
+              <button class="btn btn-danger btn-sm" id="addbutton">
+                Add Task
+              </button>
+            </div>
+            <br />
+            <div class="delete">
+              <i class="fa-regular fa-trash-can"></i>
+              <span>To Delete Please Double Tap on list</span>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-4 m-auto" id="todoitemcontainer">
+          <center>
+            <h4><u>Your List</u></h4>
+          </center>
+          <hr />
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <h3>My<span>logo</span></h3>
+
+        <p class="footer-links">
+          <a href="#" class="link-1">Home</a>
+
+          <a href="#">Blog</a>
+
+          <a href="#">Pricing</a>
+
+          <a href="#">About</a>
+
+          <a href="#">Faq</a>
+
+          <a href="#">Contact</a>
+        </p>
+
+        <p class="footer-company-name">Company Name © 2015</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa-solid fa-location-dot" style="color: #ffffff"></i>
+          <p>Nutan College Of Engineering and Research,</p>
+          <p>Talegaon Dabhade, Pune</p>
+        </div>
+        <br /><br />
+        <div>
+          <i class="fa-solid fa-phone" style="color: #ffffff"></i>
+          <p>+91 7014595713</p>
+        </div>
+        <br /><br />
+        <div>
+          <i class="fa-solid fa-envelope" style="color: #ffffff"></i>
+          <p>
+            <a href="mailto:nicklodha111@gmail.com">nicklodha111@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About Me</span>
+          Hey, I'm Nikhil lodha. I'm CSE student in Nutan college, Pune.
+          Basically I'm a Web Develop and I made this project using HTML, CSS,
+          BOOTSTRAP and JavaScript.
+        </p>
+
+        <div class="footer-icons">
+          <a href="#"
+            ><i class="fa-brands fa-facebook" style="color: #ffffff"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-twitter" style="color: #ffffff"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/nikhil-lodha-5828251b1/"
+            target="_blank"
+            ><i class="fa-brands fa-linkedin" style="color: #ffffff"></i
+          ></a>
+          <a href="#"
+            ><i class="fa-brands fa-github" style="color: #ffffff"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script type="text/javascript">
+    let inputbox = document.getElementById("inputbox");
+    let addbutton = document.getElementById("addbutton");
+    let todoitemcontainer = document.getElementById("todoitemcontainer");
+
+    addbutton.addEventListener("click", function () {
+      let item = document.createElement("h5");
+      let hr = document.createElement("hr");
+      item.innerText = inputbox.value;
+      todoitemcontainer.appendChild(item);
+      todoitemcontainer.appendChild(hr);
+      inputbox.value = "";
+      item.addEventListener("click", function () {
+        item.innerHTML = "&#xf2ed;";
+      });
+      item.addEventListener("dblclick", function () {
+        todoitemcontainer.removeChild(item);
+        todoitemcontainer.removeChild(hr);
+      });
+    });
+  </script>
+</html>
